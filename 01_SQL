@@ -1,1 +1,33 @@
 
+SELECT + WHERE
+
+1) From SH.CUSTOMERS, display customer ID, first name, last name, gender, and marital status for all female customers.
+
+DESCRIBE sh.CUSTOMERS
+
+SELECT SH.CUSTOMERS.CUST_ID,SH.CUSTOMERS.CUST_FIRST_NAME,CUST_LAST_NAME,CUST_GENDER,CUST_MARITAL_STATUS 
+FROM SH.customers
+WHERE CUST_GENDER='F'
+
+2) From SH.CUSTOMERS, find customers whose last name starts with S and whose year of birth is greater than 1970.
+
+SELECT * 
+FROM SH.CUSTOMERS
+WHERE CUST_LAST_NAME LIKE 'S%' and CUST_YEAR_OF_BIRTH > 1970
+
+3) From SH.PRODUCTS, display product ID, product name, category, and list price for products whose list price is between 100 and 500.
+
+DESCRIBE sh.PRODUCTS
+
+SELECT * FROM SH.PRODUCTS
+
+SELECT PRODUCTS.PROD_ID,PRODUCTS.PROD_NAME,PRODUCTS.PROD_CATEGORY, PRODUCTS.PROD_LIST_PRICE
+FROM SH.PRODUCTS
+WHERE PRODUCTS.PROD_LIST_PRICE between 100 AND 500;
+
+4) From SH.PRODUCTS, find products whose minimum price is less than 50 and whose status is available.
+
+SELECT * 
+FROM SH.PRODUCTS
+WHERE PRODUCTS.PROD_MIN_PRICE < 50
+AND PRODUCTS.PROD_STATUS = 'AVAILABLE'
